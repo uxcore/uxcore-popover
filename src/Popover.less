@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
- @import "../node_modules/uxcore-kuma/src/less/variables";
+ @import "../node_modules/uxcore-kuma/src/variables";
 
 
 @popoverPrefixCls: kuma-popover;
@@ -21,6 +21,13 @@
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
+  
+  &-button-group {
+    text-align: right;
+    .kuma-button {
+      margin-right: 10px;
+    }
+  }
 
   &-hidden {
     display: none;

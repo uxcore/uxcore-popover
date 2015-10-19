@@ -7,7 +7,7 @@
  */
 
 let classnames = require('classnames');
-let {Button, ButtonGroup} = require('uxcore-button');
+let Button = require('uxcore-button');
 
 let Popover = require('../src');
 
@@ -20,20 +20,17 @@ class Demo extends React.Component {
     }
 
     render() {
+        let me = this;
         let overlay = <div>
                         <div className="demoContent">
                             <i className="kuma-icon kuma-icon-information"></i> 
                             <span>你确认要删除此项数据吗？</span>
                         </div>
-                        <div className="demoButton">
-                            <Button size="medium">确定</Button>
-                            <Button size="medium" color="orange">取消</Button>
-                        </div>
                       </div>;
         return (
             <div>
                 <h2>Demo 1. 悬浮弹出</h2>
-                <Popover title="测试" overlay={overlay} placement="top">
+                <Popover title="测试" overlay={overlay} placement="top" onOk={function() {console.log(this.state)}.bind(this)}>
                     <Button>从上弹出</Button>
                 </Popover>
                 <Popover title="测试" overlay={overlay} placement="bottom">
@@ -46,7 +43,7 @@ class Demo extends React.Component {
                     <Button>从右弹出</Button>
                 </Popover>
                 <h2>Demo 2. 点击弹出</h2>
-                <Popover title="测试" overlay={overlay} placement="right" trigger="click">
+                <Popover title="测试" overlay={overlay} placement="right" trigger="click" showButton={true}>
                     <Button>从右弹出</Button>
                 </Popover>
                 <h2>Demo 3. 没有标题</h2>

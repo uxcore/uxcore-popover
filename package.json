@@ -1,6 +1,6 @@
 {
   "name": "uxcore-popover",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "uxcore-popover component for uxcore.",
   "repository": "https://github.com/uxcore/uxcore-popover.git",
   "author": "eternalsky",
@@ -29,15 +29,15 @@
     "gulp-just-replace": "~1.0.2",
     "gulp-less": "~3.0.3",
     "gulp-sourcemaps": "~1.5.2",
-    "uxcore-button": "~0.1.4",
-    "webpack": "^1.10.5"
+    "uxcore-button": "~0.3.0",
+    "webpack": "^1.10.5",
+    "react": "^0.14.0",
+    "uxcore-kuma": "~1.1.0"
   },
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^2.0.0",
-    "rc-tooltip": "~2.7.0",
-    "react": "^0.13.3",
-    "uxcore-kuma": "~1.0.3"
+    "rc-tooltip": "~3.0.0"
   },
   "contributors": [],
   "license": "MIT"
