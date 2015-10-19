@@ -85,6 +85,7 @@ class Popover extends React.Component {
 
         return (
             <Tooltip placement={me.props.placement}
+                   overlayClassName={'uxcore'}
                    prefixCls={me.props.prefixCls}
                    visible={me.state.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
@@ -109,6 +110,7 @@ Popover.defaultProps = {
     cancelText: "取消",
     showButton: false
 }
+
 
 
 // http://facebook.github.io/react/docs/reusable-components.html

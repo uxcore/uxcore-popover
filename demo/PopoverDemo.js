@@ -42,7 +42,7 @@ class Demo extends React.Component {
                 <Popover title="测试" overlay={overlay} placement="right">
                     <Button>从右弹出</Button>
                 </Popover>
-                <h2>Demo 2. 点击弹出</h2>
+                <h2>Demo 2. 点击弹出 & 内置按钮</h2>
                 <Popover title="测试" overlay={overlay} placement="right" trigger="click" showButton={true}>
                     <Button>从右弹出</Button>
                 </Popover>

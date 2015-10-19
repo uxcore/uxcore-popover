@@ -1,3 +1,7 @@
-# 0.1.1
+# HISTORY
+
+## 0.1.1
 
 `CHANGED` update rc-tooltip denpendency to `~3.0.0`
+`FIXED` #3
+
