@@ -44,11 +44,12 @@ class Popover extends React.Component {
 
         return (
             <Tooltip placement={me.props.placement}
-                   prefixCls={me.props.prefixCls}
-                   delay={me.props.delay}
-                   transitionName={transitionName}
-                   trigger={me.props.trigger}
-                   overlay={me._generateOverlay()}>
+                overlayClassName={'uxcore'}
+                prefixCls={me.props.prefixCls}
+                delay={me.props.delay}
+                transitionName={transitionName}
+                trigger={me.props.trigger}
+                overlay={me._generateOverlay()}>
                 {me.props.children}
             </Tooltip>
         );
@@ -60,7 +61,7 @@ Popover.defaultProps = {
     delay: 0.1,
     placement: "top",
     trigger: "hover"
-}
+};
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
