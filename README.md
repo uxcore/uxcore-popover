@@ -63,6 +63,7 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |overlay|string|required|-|弹窗内容|
+|overlayClassName|string|optional|-|弹窗的额外类名|
 |title|string|optional|-|弹窗标题，不传入则没有标题栏|
 |placement|string|optional|top|弹窗从那个方向弹出|
 |prefixCls|string|optional|kuma-popup|类名前缀，用于定制化|

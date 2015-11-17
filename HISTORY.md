@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.1.2
+
+`NEW` add overlayClassName props
+
 ## 0.1.1
 
 `CHANGED` update rc-tooltip denpendency to `~3.0.0`

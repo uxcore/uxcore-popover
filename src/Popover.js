@@ -85,7 +85,7 @@ class Popover extends React.Component {
 
         return (
             <Tooltip placement={me.props.placement}
-                   overlayClassName={'uxcore'}
+                   overlayClassName={me.props.overlayClassName}
                    prefixCls={me.props.prefixCls}
                    visible={me.state.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
@@ -117,6 +117,7 @@ Popover.defaultProps = {
 Popover.propTypes = {
     prefixCls: React.PropTypes.string,
     delay: React.PropTypes.number,
+    overlayClassName: React.PropTypes.string,
     placement: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     trigger: React.PropTypes.oneOf(['hover', 'click']),
     onOk: React.PropTypes.func,
