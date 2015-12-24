@@ -22,13 +22,7 @@ class Popover extends React.Component {
 
     handleOkClick() {
         let me = this;
-        // me.setState({
-        //     visible: false
-        // }, () => {
-        //     me.props.onOk()
-        // });
-        // update by peng2e fix about onOk callback
-        me.props.onOk(function(){
+        me.props.onOk(() => {
             me.setState({
                 visible: false
             })

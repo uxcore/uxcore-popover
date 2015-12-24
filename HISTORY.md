@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.2.0
+
+`CHANGED` add hide callback in `onOK`
+
 ## 0.1.2
 
 `NEW` add overlayClassName props
