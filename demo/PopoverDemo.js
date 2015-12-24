@@ -19,6 +19,12 @@ class Demo extends React.Component {
         }
     }
 
+    test() {
+        alert('test');
+    }
+    onOk( cb ){
+        cb()
+    }
     render() {
         let me = this;
         let overlay = <div>
@@ -30,7 +36,7 @@ class Demo extends React.Component {
         return (
             <div>
                 <h2>Demo 1. 悬浮弹出</h2>
-                <Popover title="测试" overlay={overlay} placement="top" onOk={function() {console.log(this.state)}.bind(this)}>
+                <Popover title="测试" overlay={overlay} placement="top" onOk={this.test}>
                     <Button>从上弹出</Button>
                 </Popover>
                 <Popover title="测试" overlay={overlay} placement="bottom">
@@ -43,7 +49,7 @@ class Demo extends React.Component {
                     <Button>从右弹出</Button>
                 </Popover>
                 <h2>Demo 2. 点击弹出 & 内置按钮</h2>
-                <Popover title="测试" overlay={overlay} placement="right" trigger="click" showButton={true}>
+                <Popover title="测试" overlay={overlay} placement="right" trigger="click" onOk={me.onOk} showButton={true}>
                     <Button>从右弹出</Button>
                 </Popover>
                 <h2>Demo 3. 没有标题</h2>

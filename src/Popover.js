@@ -22,11 +22,17 @@ class Popover extends React.Component {
 
     handleOkClick() {
         let me = this;
-        me.setState({
-            visible: false
-        }, () => {
-            me.props.onOk()
-        });
+        // me.setState({
+        //     visible: false
+        // }, () => {
+        //     me.props.onOk()
+        // });
+        // update by peng2e fix about onOk callback
+        me.props.onOk(function(){
+            me.setState({
+                visible: false
+            })
+        })
     }
 
     handleCancelClick() {
@@ -104,7 +110,7 @@ Popover.defaultProps = {
     delay: 0.1,
     placement: "top",
     trigger: "hover",
-    onOk: () => {},
+    onOk: (cb) => {cb()},
     onCancel: () => {},
     okText: "确定",
     cancelText: "取消",
