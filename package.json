@@ -37,7 +37,7 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "object-assign": "^2.0.0",
-    "rc-tooltip": "~3.0.0"
+    "rc-tooltip": "~3.3.0"
   },
   "contributors": [],
   "license": "MIT"

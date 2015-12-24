@@ -1,5 +1,8 @@
 # HISTORY
 
+## 0.2.1
+`CHANGED` add more direction support
+
 ## 0.2.0
 
 `CHANGED` add hide callback in `onOK`

@@ -18,8 +18,6 @@ class Popover extends React.Component {
         }
     }
 
-
-
     handleOkClick() {
         let me = this;
         me.props.onOk(() => {
@@ -80,7 +78,15 @@ class Popover extends React.Component {
             top: 'zoom-down',
             bottom: 'zoom-up',
             left: 'zoom-right',
-            right: 'zoom-left'
+            right: 'zoom-left',
+            topLeft: 'zoom-down',
+            bottomLeft: 'zoom-up',
+            leftTop: 'zoom-right',
+            rightTop: 'zoom-left',
+            topRight: 'zoom-down',
+            bottomRight: 'zoom-up',
+            leftBottom: 'zoom-right',
+            rightBottom: 'zoom-left'
         })[me.props.placement];
 
         return (
@@ -101,7 +107,7 @@ class Popover extends React.Component {
 
 Popover.defaultProps = {
     prefixCls: 'kuma-popover',
-    delay: 0.1,
+    delay: 0,
     placement: "top",
     trigger: "hover",
     onOk: (cb) => {cb()},
@@ -111,14 +117,12 @@ Popover.defaultProps = {
     showButton: false
 }
 
-
-
 // http://facebook.github.io/react/docs/reusable-components.html
 Popover.propTypes = {
     prefixCls: React.PropTypes.string,
     delay: React.PropTypes.number,
     overlayClassName: React.PropTypes.string,
-    placement: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    placement: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'topLeft', 'bottomLeft', 'leftTop', 'rightTop', 'topRight', 'bottomRight', 'leftBottom', 'rightBottom']),
     trigger: React.PropTypes.oneOf(['hover', 'click']),
     onOk: React.PropTypes.func,
     onCancel: React.PropTypes.func,
