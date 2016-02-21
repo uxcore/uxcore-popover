@@ -6,6 +6,7 @@
  * All rights reserved.
  */
 
+let React = require('react');
 let Tooltip = require("rc-tooltip");
 let Button = require("uxcore-button");
 
