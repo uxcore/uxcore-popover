@@ -1,5 +1,8 @@
 # HISTORY
 
+## 0.2.2
+`CHANGED` add react require to be compatible with nodejs
+
 ## 0.2.1
 `CHANGED` add more direction support
 
