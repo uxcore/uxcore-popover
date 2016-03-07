@@ -1,5 +1,7 @@
 # HISTORY
 
+`CHANGED` update scaffold
+
 ## 0.2.2
 `CHANGED` add react require to be compatible with nodejs
 

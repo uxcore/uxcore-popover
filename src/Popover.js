@@ -7,6 +7,8 @@
  */
 
 let React = require('react');
+let ReactDOM = require('react-dom');
+
 let Tooltip = require("rc-tooltip");
 let Button = require("uxcore-button");
 
@@ -41,7 +43,7 @@ class Popover extends React.Component {
         this.setState({
             visible: visible
         })
-    } 
+    }
 
     _renderButton() {
         let me = this;
