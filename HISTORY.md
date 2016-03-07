@@ -1,5 +1,7 @@
 # HISTORY
 
+## 0.2.3
+
 `CHANGED` update scaffold
 
 ## 0.2.2
