@@ -94,6 +94,7 @@ class Popover extends React.Component {
 
         return (
             <Tooltip placement={me.props.placement}
+                   arrowContent={me.props.arrowContent}
                    overlayClassName={me.props.overlayClassName}
                    prefixCls={me.props.prefixCls}
                    visible={me.state.visible}
@@ -117,7 +118,8 @@ Popover.defaultProps = {
     onCancel: () => {},
     okText: "确定",
     cancelText: "取消",
-    showButton: false
+    showButton: false,
+    arrowContent: <div className="kuma-popover-arrow-inner"></div>
 }
 
 // http://facebook.github.io/react/docs/reusable-components.html
