@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.3.0
+
+`CHANGED` open transitionName config
+
 ## 0.2.3
 
 `CHANGED` update scaffold
