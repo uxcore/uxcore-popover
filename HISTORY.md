@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.3.2
+
+`NEW` add default transition name
+
 ## 0.3.0
 
 `CHANGED` open transitionName config
