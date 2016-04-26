@@ -77,21 +77,6 @@ class Popover extends React.Component {
     render() {
         let me = this;
 
-        let transitionName = ({
-            top: 'zoom-down',
-            bottom: 'zoom-up',
-            left: 'zoom-right',
-            right: 'zoom-left',
-            topLeft: 'zoom-down',
-            bottomLeft: 'zoom-up',
-            leftTop: 'zoom-right',
-            rightTop: 'zoom-left',
-            topRight: 'zoom-down',
-            bottomRight: 'zoom-up',
-            leftBottom: 'zoom-right',
-            rightBottom: 'zoom-left'
-        })[me.props.placement];
-
         return (
             <Tooltip placement={me.props.placement}
                    arrowContent={me.props.arrowContent}
@@ -100,7 +85,7 @@ class Popover extends React.Component {
                    visible={me.state.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
                    delay={me.props.delay}
-                   transitionName={transitionName}
+                   transitionName={me.props.transitionName}
                    trigger={me.props.trigger}
                    overlay={me._generateOverlay()}>
                 {me.props.children}
@@ -111,6 +96,7 @@ class Popover extends React.Component {
 
 Popover.defaultProps = {
     prefixCls: 'kuma-popover',
+    transitionName: 'flip',
     delay: 0,
     placement: "top",
     trigger: "hover",

@@ -1,199 +1,209 @@
-@popover-prefix-cls: kuma-popover;
-
-//
-// Popovers
-// --------------------------------------------------
-@font-size-base         : 12px;
-@line-height-base       : 1.5;
-@border-radius-base     : 0px;
-@overlay-shadow              : 0 0 4px rgba(0, 0, 0, 0.17);
-//** Popover text color
-@popover-color: #333333;
-//** Popover background color
-@popover-bg: #ffffff;
-@popover-opacity: 1;
-
-@popover-border-width: 1px;
-@popover-border-color: #e9e9e9;
-@popover-shadow-width: 1px;
+/**
+ * Popover Component Style for uxcore
+ * @author eternalsky
+ *
+ * Copyright 2014-2015, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+@__popoverPrefixCls: kuma-popover;
 
 //** Popover arrow width
-@popover-arrow-width: 6px;
+@__popover-arrow-width:                 4px;
 //** Popover distance with trigger
-//** Popover arrow color
-@popover-arrow-color: @popover-border-color;
-@popover-arrow-inner-color: @popover-bg;
+@__popover-distance:                    @__popover-arrow-width + 4;
+//** Popover outer arrow width
+@__popover-arrow-outer-width:           @__popover-arrow-width + 1;
 
-// Base class
-.@{popover-prefix-cls} {
-  position: absolute;
-  z-index: 1070;
-  display: block;
-  visibility: visible;
-  line-height: @line-height-base;
-  font-size: @font-size-base;
-  background-color:rgba(0, 0, 0, 0.05);
-  padding: @popover-shadow-width;
-  opacity: @popover-opacity;
+.@{__popoverPrefixCls} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    cursor: auto;
+    user-select: text;
+    white-space: normal;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: normal;
+    text-align: left;
+
+    &-button-group {
+        padding: 10px 0;
+        background-color: @basic-300;
+        text-align: center;
+        .kuma-button {
+            margin-right: 10px;
+        }
+    }
 
   &-hidden {
     display: none;
   }
-  &-title {
-    margin: 0; // reset heading margin
-    padding: 0 16px;
-    line-height: 32px;
-    height: 32px;
-    border-bottom: 1px solid #e9e9e9;
-    color: #666;
+
+  // Offset the popover to account for the popover arrow
+  &-placement-top,
+  &-placement-topLeft,
+  &-placement-topRight {
+    margin-top: -@__popover-arrow-width;
+    padding-bottom: @__popover-distance;
   }
-}
 
-// Wrapper for the popover content
-.@{popover-prefix-cls}-inner {
-  
-  color: @popover-color;
-  text-align: left;
-  text-decoration: none;
-  background-color: @popover-bg;
-  border-radius: @border-radius-base;
-  min-height: 34px;
-  border:@popover-border-width solid @popover-border-color;
-  .@{popover-prefix-cls}-content {
-    padding: 8px 10px;
+  &-placement-right,
+  &-placement-rightTop,
+  &-placement-rightBottom {
+    margin-left: @__popover-arrow-width;
+    padding-left: @__popover-distance;
   }
-}
 
-// Arrows
-.@{popover-prefix-cls}-arrow,
-.@{popover-prefix-cls}-arrow-inner{
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-}
+  &-placement-bottom,
+  &-placement-bottomLeft,
+  &-placement-bottomRight {
+    margin-top: @__popover-arrow-width;
+    padding-top: @__popover-distance;
+  }
 
-.@{popover-prefix-cls} {
+  &-placement-left,
+  &-placement-leftTop,
+  &-placement-leftBottom {
+    margin-left: -@__popover-arrow-width;
+    padding-right: @__popover-distance;
+  }
+
+  &-inner {
+    min-width: 180px;
+    background-color: #fff;
+    border: 1px solid @border-color;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+    .@{__popoverPrefixCls}-content {
+        > div {
+            &:first-child {
+                padding: 20px;
+            }
+        }
+    }
+  }
+
+    &-title {
+        padding: 0 20px;
+        line-height: 32px;
+        height: 32px;
+        border-bottom: 1px solid @border-color;
+        color: @text-secondary-color;
+    }
+
+  // Arrows
+  // .popover-arrow is outer, .popover-arrow:after is inner
+
+  &-arrow {
+    &,
+    &:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  &-arrow {
+    border-width: @__popover-arrow-outer-width;
+  }
+  &-arrow:after {
+    border-width: @__popover-arrow-width;
+    content: "";
+  }
+
   &-placement-top &-arrow,
   &-placement-topLeft &-arrow,
-  &-placement-topRight &-arrow{
-    bottom: -@popover-arrow-width + @popover-shadow-width;
-    margin-left: -@popover-arrow-width;
-    border-width: @popover-arrow-width @popover-arrow-width 0;
-    border-top-color: @popover-arrow-color;
-  }
-
-  &-placement-top &-arrow-inner,
-  &-placement-topLeft &-arrow-inner,
-  &-placement-topRight &-arrow-inner{
-    bottom: @popover-border-width;
-    margin-left: -@popover-arrow-width;
-    border-width: @popover-arrow-width @popover-arrow-width 0;
-    border-top-color: @popover-arrow-inner-color;
-  }
-
-  &-placement-top &-arrow {
-    left: 50%;
-  }
-
-  &-placement-topLeft &-arrow {
-    left: 5%;
-  }
-
   &-placement-topRight &-arrow {
-    right: 5%;
+    left: 50%;
+    margin-left: -@__popover-arrow-outer-width;
+    border-bottom-width: 0;
+    border-top-color: @border-color;
+    bottom: @__popover-distance - @__popover-arrow-outer-width + 1;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -@__popover-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: #fff;
+    }
+  }
+  &-placement-topLeft &-arrow {
+    left: 15%;
+  }
+  &-placement-topRight &-arrow {
+    left: 85%;
   }
 
   &-placement-right &-arrow,
   &-placement-rightTop &-arrow,
   &-placement-rightBottom &-arrow {
-    left: -@popover-arrow-width + @popover-shadow-width;
-    margin-top: -@popover-arrow-width;
-    border-width: @popover-arrow-width @popover-arrow-width @popover-arrow-width 0;
-    border-right-color: @popover-arrow-color;
-  }
-
-  &-placement-right &-arrow-inner,
-  &-placement-rightTop &-arrow-inner,
-  &-placement-rightBottom &-arrow-inner {
-    left: @popover-border-width;
-    margin-top: -@popover-arrow-width;
-    border-width: @popover-arrow-width @popover-arrow-width @popover-arrow-width 0;
-    border-right-color: @popover-arrow-inner-color;
-  }
-
-  &-placement-right &-arrow {
     top: 50%;
+    left: @__popover-distance - @__popover-arrow-outer-width + 1;
+    margin-top: -@__popover-arrow-outer-width;
+    border-left-width: 0;
+    border-right-color: @border-color;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -@__popover-arrow-width;
+      border-left-width: 0;
+      border-right-color: #fff;
+    }
   }
-
   &-placement-rightTop &-arrow {
-    top: 5%;
-    margin-top: 0;
+    top: 15%;
   }
-
   &-placement-rightBottom &-arrow {
-    bottom: 5%;
-  }
-
-  &-placement-left &-arrow,
-  &-placement-leftTop &-arrow,
-  &-placement-leftBottom &-arrow {
-    right: -@popover-arrow-width + @popover-shadow-width;
-    margin-top: -@popover-arrow-width;
-    border-width: @popover-arrow-width 0 @popover-arrow-width @popover-arrow-width;
-    border-left-color: @popover-arrow-color;
-  }
-
-  &-placement-left &-arrow-inner,
-  &-placement-leftTop &-arrow-inner,
-  &-placement-leftBottom &-arrow-inner {
-    right: @popover-border-width;
-    margin-top: -@popover-arrow-width;
-    border-width: @popover-arrow-width 0 @popover-arrow-width @popover-arrow-width;
-    border-left-color: @popover-arrow-inner-color;
-  }
-
-  &-placement-left &-arrow {
-    top: 50%;
-  }
-
-  &-placement-leftTop &-arrow {
-    top: 5%;
-    margin-top: 0;
-  }
-
-  &-placement-leftBottom &-arrow {
-    bottom: 5%;
+    top: 85%;
   }
 
   &-placement-bottom &-arrow,
   &-placement-bottomLeft &-arrow,
   &-placement-bottomRight &-arrow {
-    top: -@popover-arrow-width + @popover-shadow-width;;
-    margin-left: -@popover-arrow-width;
-    border-width: 0 @popover-arrow-width @popover-arrow-width;
-    border-bottom-color: @popover-arrow-color;
-  }
-
-  &-placement-bottom &-arrow-inner,
-  &-placement-bottomLeft &-arrow-inner,
-  &-placement-bottomRight &-arrow-inner {
-    top: @popover-border-width;
-    margin-left: -@popover-arrow-width;
-    border-width: 0 @popover-arrow-width @popover-arrow-width;
-    border-bottom-color: @popover-arrow-inner-color;
-  }
-
-  &-placement-bottom &-arrow {
     left: 50%;
+    margin-left: -@__popover-arrow-outer-width;
+    border-top-width: 0;
+    border-bottom-color: @border-color;
+    top: @__popover-distance - @__popover-arrow-outer-width + 1;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -@__popover-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: #fff;
+    }
   }
-
   &-placement-bottomLeft &-arrow {
-    left: 5%;
+    left: 15%;
+  }
+  &-placement-bottomRight &-arrow {
+    left: 85%;
   }
 
-  &-placement-bottomRight &-arrow {
-    right: 5%;
+  &-placement-left &-arrow,
+  &-placement-leftTop &-arrow,
+  &-placement-leftBottom &-arrow {
+    top: 50%;
+    right: @__popover-distance - @__popover-arrow-outer-width + 1;
+    margin-top: -@__popover-arrow-outer-width;
+    border-right-width: 0;
+    border-left-color: @border-color;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: #fff;
+      bottom: -@__popover-arrow-width;
+    }
+  }
+  &-placement-leftTop &-arrow {
+    top: 15%;
+  }
+  &-placement-leftBottom &-arrow {
+    top: 85%;
   }
 }
