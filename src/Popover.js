@@ -44,7 +44,9 @@ class Popover extends React.Component {
         me.setState({
             visible: visible
         }, () => {
-            me.props.onVisibleChange(visible)
+            if (me.props.visible == null) {
+                me.props.onVisibleChange(visible)
+            }
         })
     }
 
@@ -85,7 +87,7 @@ class Popover extends React.Component {
                    arrowContent={me.props.arrowContent}
                    overlayClassName={me.props.overlayClassName}
                    prefixCls={me.props.prefixCls}
-                   visible={me.state.visible}
+                   visible={me.props.visible == null ? me.state.visible : me.props.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
                    delay={me.props.delay}
                    transitionName={me.props.transitionName}

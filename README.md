@@ -82,6 +82,14 @@ return (
         <Popover overlay={overlay} placement="right">
             <Button>从右弹出</Button>
         </Popover>
+        <h2>Demo 4. 监听弹窗展开/收起状态</h2>
+        <Popover overlay={overlay} placement="bottom" onVisibleChange={me.onVisibleChange.bind(me)}>
+             <Button>从下弹出</Button>
+        </Popover>
+        <h2>Demo 5. 手动控制显示状态</h2>
+        <Popover overlay={overlay} placement="bottom" visible={me.state.visible}>
+            <Button onMouseOver={me.onChange.bind(me, true)} onMouseLeave={me.onChange.bind(me, false)}>手动控制</Button>
+        </Popover>
     </div>
 ```
 
@@ -96,6 +104,7 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 |---|---|---|---|---|
 |overlay|string|required|-|弹窗内容|
 |overlayClassName|string|optional|-|弹窗的额外类名|
+|visible|boolean|optional|-|是否展开弹窗内容，如果不填则自动处理；填写则需要手动处理|
 |title|string|optional|-|弹窗标题，不传入则没有标题栏|
 |placement|string|optional|top|弹窗从那个方向弹出|
 |prefixCls|string|optional|kuma-popup|类名前缀，用于定制化|
@@ -105,6 +114,6 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 |onCancel|function|optional|noop|内置的取消按钮的回调|
 |okText|string|optional|"确定"|内置的确定按钮显示的文案|
 |cancelText|string|optional|"取消"|内置的取消按钮显示的文案|
-|onVisibleChange|function|optional|noop|显示状态发生改变的回调|
+|onVisibleChange|function(isDisplay)|optional|noop|显示状态发生改变的回调，isDisplay表示弹窗是否展开。如果手动设置了visible参数，则不触发该回调|
 
 
