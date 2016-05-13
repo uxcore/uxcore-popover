@@ -110,8 +110,7 @@ Popover.defaultProps = {
     okText: "确定",
     cancelText: "取消",
     showButton: false,
-    arrowContent: <div className="kuma-popover-arrow-inner"></div>,
-    onVisibleChange: () => {}
+    arrowContent: <div className="kuma-popover-arrow-inner"></div>
 }
 
 // http://facebook.github.io/react/docs/reusable-components.html
@@ -125,8 +124,7 @@ Popover.propTypes = {
     onCancel: React.PropTypes.func,
     okText: React.PropTypes.string,
     cancelText: React.PropTypes.string,
-    showButton: React.PropTypes.bool,
-    onVisibleChange: React.PropTypes.func
+    showButton: React.PropTypes.bool
 }
 
 
