@@ -40,8 +40,11 @@ class Popover extends React.Component {
     }
 
     handleVisibleChange(visible) {
-        this.setState({
+        let me = this;
+        me.setState({
             visible: visible
+        }, () => {
+            me.props.onVisibleChange(visible)
         })
     }
 
@@ -105,7 +108,8 @@ Popover.defaultProps = {
     okText: "确定",
     cancelText: "取消",
     showButton: false,
-    arrowContent: <div className="kuma-popover-arrow-inner"></div>
+    arrowContent: <div className="kuma-popover-arrow-inner"></div>,
+    onVisibleChange: () => {}
 }
 
 // http://facebook.github.io/react/docs/reusable-components.html
@@ -119,7 +123,8 @@ Popover.propTypes = {
     onCancel: React.PropTypes.func,
     okText: React.PropTypes.string,
     cancelText: React.PropTypes.string,
-    showButton: React.PropTypes.bool
+    showButton: React.PropTypes.bool,
+    onVisibleChange: React.PropTypes.func
 }
 
 

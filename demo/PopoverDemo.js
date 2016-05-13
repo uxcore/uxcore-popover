@@ -25,6 +25,11 @@ class Demo extends React.Component {
     onOk( cb ){
         cb()
     }
+
+    onVisibleChange(visible) {
+        console.log(visible)
+    }
+
     render() {
         let me = this;
         let overlay = <div>
@@ -87,7 +92,7 @@ class Demo extends React.Component {
                     <Button>从右弹出</Button>
                 </Popover>
                 <h2>Demo 3. 没有标题</h2>
-                <Popover overlay={overlay} placement="right">
+                <Popover overlay={overlay} placement="right" onVisibleChange={me.onVisibleChange}>
                     <Button>从右弹出</Button>
                 </Popover>
             </div>
