@@ -21,6 +21,17 @@ class Popover extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        let me = this;
+
+        if ('visible' in me.props) {
+            me.setState({
+                visible: nextProps.visible
+            });
+        }
+        
+    }
+
     handleOkClick() {
         let me = this;
         me.props.onOk(() => {
@@ -41,13 +52,14 @@ class Popover extends React.Component {
 
     handleVisibleChange(visible) {
         let me = this;
-        me.setState({
-            visible: visible
-        }, () => {
-            if (me.props.visible == null) {
-                me.props.onVisibleChange(visible)
-            }
-        })
+
+        if (! ('visible' in me.props)) {
+            me.setState({
+                visible: visible
+            }, () => {
+                me.props.onVisibleChange(visible);
+            })
+        }
     }
 
     _renderButton() {
@@ -87,7 +99,7 @@ class Popover extends React.Component {
                    arrowContent={me.props.arrowContent}
                    overlayClassName={me.props.overlayClassName}
                    prefixCls={me.props.prefixCls}
-                   visible={me.props.visible == null ? me.state.visible : me.props.visible}
+                   visible={me.state.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
                    delay={me.props.delay}
                    transitionName={me.props.transitionName}
@@ -110,7 +122,8 @@ Popover.defaultProps = {
     okText: "确定",
     cancelText: "取消",
     showButton: false,
-    arrowContent: <div className="kuma-popover-arrow-inner"></div>
+    arrowContent: <div className="kuma-popover-arrow-inner"></div>,
+    onVisibleChange: () => {}
 }
 
 // http://facebook.github.io/react/docs/reusable-components.html
@@ -124,7 +137,8 @@ Popover.propTypes = {
     onCancel: React.PropTypes.func,
     okText: React.PropTypes.string,
     cancelText: React.PropTypes.string,
-    showButton: React.PropTypes.bool
+    showButton: React.PropTypes.bool,
+    onVisibleChange: React.PropTypes.func
 }
 
 

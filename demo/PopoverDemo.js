@@ -107,7 +107,7 @@ class Demo extends React.Component {
                     <Button>从下弹出</Button>
                 </Popover>
                 <h2>Demo 5. 手动控制显示状态</h2>
-                <Popover overlay={overlay} placement="bottom" visible={me.state.visible}>
+                <Popover overlay={overlay} placement="bottom" visible={me.state.visible} onVisibleChange={me.onVisibleChange.bind(me)}>
                     <Button onMouseOver={me.onChange.bind(me, true)} onMouseLeave={me.onChange.bind(me, false)}>手动控制</Button>
                 </Popover>
             </div>
