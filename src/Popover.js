@@ -16,33 +16,59 @@ class Popover extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            visible: false
+            visible: 'visible' in props ? props.visible : false
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        let me = this;
+
+        if (('visible' in nextProps) && (nextProps.visible !== me.props.visible)) {
+            me.setState({
+                visible: nextProps.visible
+            });
+        }
+        
     }
 
     handleOkClick() {
         let me = this;
         me.props.onOk(() => {
-            me.setState({
-                visible: false
-            })
+            if (!('visible' in me.props)) {
+                me.setState({
+                    visible: false
+                })
+            }
         })
     }
 
     handleCancelClick() {
         let me = this;
-        me.setState({
-            visible: false
-        }, () => {
+
+        if (!('visible' in me.props)) {
+            me.setState({
+                visible: false
+            }, () => {
+                me.props.onCancel()
+            });
+        } else {
             me.props.onCancel()
-        });
+        }
     }
 
     handleVisibleChange(visible) {
-        this.setState({
-            visible: visible
-        })
+        let me = this;
+        if (!('visible' in me.props)) {
+            me.setState({
+                visible: visible
+            }, () => {
+                me.props.onVisibleChange(visible);
+            })
+        } else {
+            me.props.onVisibleChange(visible);
+        }
     }
 
     _renderButton() {
@@ -105,7 +131,8 @@ Popover.defaultProps = {
     okText: "确定",
     cancelText: "取消",
     showButton: false,
-    arrowContent: <div className="kuma-popover-arrow-inner"></div>
+    arrowContent: <div className="kuma-popover-arrow-inner"></div>,
+    onVisibleChange: () => {}
 }
 
 // http://facebook.github.io/react/docs/reusable-components.html
@@ -119,7 +146,8 @@ Popover.propTypes = {
     onCancel: React.PropTypes.func,
     okText: React.PropTypes.string,
     cancelText: React.PropTypes.string,
-    showButton: React.PropTypes.bool
+    showButton: React.PropTypes.bool,
+    onVisibleChange: React.PropTypes.func
 }
 
 

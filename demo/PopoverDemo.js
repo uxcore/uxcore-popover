@@ -16,6 +16,7 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false
         }
     }
 
@@ -25,6 +26,22 @@ class Demo extends React.Component {
     onOk( cb ){
         cb()
     }
+
+    onChange(visible) {
+        this.setState({
+            visible: visible
+        })
+    }
+
+    onVisibleChange(visible) {
+        if (!visible) {
+            this.setState({
+                visible: visible
+            })
+        }
+        console.log(visible)
+    }
+
     render() {
         let me = this;
         let overlay = <div>
@@ -89,6 +106,14 @@ class Demo extends React.Component {
                 <h2>Demo 3. 没有标题</h2>
                 <Popover overlay={overlay} placement="right">
                     <Button>从右弹出</Button>
+                </Popover>
+                <h2>Demo 4. 监听弹窗展开/收起状态</h2>
+                <Popover overlay={overlay} placement="bottom" onVisibleChange={me.onVisibleChange.bind(me)}>
+                    <Button>从下弹出</Button>
+                </Popover>
+                <h2>Demo 5. 手动控制显示状态</h2>
+                <Popover overlay={overlay} placement="bottom" visible={me.state.visible} onVisibleChange={me.onVisibleChange.bind(me)}>
+                    <Button onMouseOver={me.onChange.bind(me, true)}>手动控制</Button>
                 </Popover>
             </div>
         );
