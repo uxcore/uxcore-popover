@@ -16,8 +16,9 @@ class Popover extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            visible: false
+            visible: 'visible' in props ? props.visible : false
         }
     }
 
@@ -35,25 +36,31 @@ class Popover extends React.Component {
     handleOkClick() {
         let me = this;
         me.props.onOk(() => {
-            me.setState({
-                visible: false
-            })
+            if (!('visible' in me.props)) {
+                me.setState({
+                    visible: false
+                })
+            }
         })
     }
 
     handleCancelClick() {
         let me = this;
-        me.setState({
-            visible: false
-        }, () => {
+
+        if (!('visible' in me.props)) {
+            me.setState({
+                visible: false
+            }, () => {
+                me.props.onCancel()
+            });
+        } else {
             me.props.onCancel()
-        });
+        }
     }
 
     handleVisibleChange(visible) {
         let me = this;
-
-        if (! ('visible' in me.props)) {
+        if (!('visible' in me.props)) {
             me.setState({
                 visible: visible
             }, () => {

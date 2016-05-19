@@ -34,6 +34,11 @@ class Demo extends React.Component {
     }
 
     onVisibleChange(visible) {
+        if (!visible) {
+            this.setState({
+                visible: visible
+            })
+        }
         console.log(visible)
     }
 
@@ -108,7 +113,7 @@ class Demo extends React.Component {
                 </Popover>
                 <h2>Demo 5. 手动控制显示状态</h2>
                 <Popover overlay={overlay} placement="bottom" visible={me.state.visible} onVisibleChange={me.onVisibleChange.bind(me)}>
-                    <Button onMouseOver={me.onChange.bind(me, true)} onMouseLeave={me.onChange.bind(me, false)}>手动控制</Button>
+                    <Button onMouseOver={me.onChange.bind(me, true)}>手动控制</Button>
                 </Popover>
             </div>
         );
