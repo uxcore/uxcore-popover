@@ -114,6 +114,6 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 |onCancel|function|optional|noop|内置的取消按钮的回调|
 |okText|string|optional|"确定"|内置的确定按钮显示的文案|
 |cancelText|string|optional|"取消"|内置的取消按钮显示的文案|
-|onVisibleChange|function(isDisplay)|optional|noop|显示状态发生改变的回调，isDisplay表示弹窗是否展开。如果手动设置了visible参数，则不触发该回调|
+|onVisibleChange|function(isDisplay)|optional|noop|显示状态发生改变的回调，isDisplay表示弹窗是否展开|
 
 

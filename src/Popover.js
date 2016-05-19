@@ -24,7 +24,7 @@ class Popover extends React.Component {
     componentWillReceiveProps(nextProps) {
         let me = this;
 
-        if ('visible' in me.props) {
+        if (('visible' in nextProps) && (nextProps.visible !== me.props.visible)) {
             me.setState({
                 visible: nextProps.visible
             });
@@ -59,6 +59,8 @@ class Popover extends React.Component {
             }, () => {
                 me.props.onVisibleChange(visible);
             })
+        } else {
+            me.props.onVisibleChange(visible);
         }
     }
 
