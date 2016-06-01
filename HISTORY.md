@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.3.4
+
+`NEW` add new prop `visible`
+
 ## 0.3.2
 
 `NEW` add default transition name
