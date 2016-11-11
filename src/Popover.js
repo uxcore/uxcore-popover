@@ -110,7 +110,7 @@ class Popover extends React.Component {
                    prefixCls={me.props.prefixCls}
                    visible={me.state.visible}
                    onVisibleChange={me.handleVisibleChange.bind(me)}
-                   delay={me.props.delay}
+                   mouseEnterDelay={me.props.delay}
                    transitionName={me.props.transitionName}
                    trigger={me.props.trigger}
                    overlay={me._generateOverlay()}>
