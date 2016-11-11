@@ -1,5 +1,11 @@
 # HISTORY
 
+## 0.3.5
+
+* `FIXED` prop `delay` fail to work
+* `CHANGED` new scaffold
+* `CHANGED` airbnb javascript style lint
+
 ## 0.3.4
 
 `NEW` add new prop `visible`
