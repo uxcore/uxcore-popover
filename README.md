@@ -109,6 +109,7 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 |placement|string|optional|top|弹窗从那个方向弹出|
 |prefixCls|string|optional|kuma-popup|类名前缀，用于定制化|
 |trigger|string|optional|hover|触发弹窗的方式，有 hover 和 click 两种|
+|delay|number|optional|0|hover延迟显示时间，单位ms|
 |showButton|boolean|optional|false|是否显示内置按钮|
 |onOk|function(hideCallback)|optional|noop|内置的确定按钮的回调，当想要关闭 popover 时需调用 hideCallback|
 |onCancel|function|optional|noop|内置的取消按钮的回调|
