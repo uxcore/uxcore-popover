@@ -55,7 +55,7 @@ class Demo extends React.Component {
     return (
       <div>
         <h2>Demo 1. 悬浮弹出</h2>
-        <div style={{ marginLeft: 100 }}>
+        <div style={{ marginLeft: 300, marginTop: 100 }}>
           <div style={{ marginLeft: 60 }}>
             <Popover placement="topLeft" title={'上左'} overlay={overlay} onOk={test}>
               <Button>上左</Button>

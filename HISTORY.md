@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.4.0
+
+* `CHANGED` new animation
+
 ## 0.3.5
 
 * `FIXED` prop `delay` fail to work
