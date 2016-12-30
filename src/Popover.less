@@ -208,7 +208,7 @@
   }
 }
 
-@keyframes tipSlideInLeft {
+@keyframes popoverSlideInLeft {
   0% {
     transform: translate(-10px, 0);
     opacity: 0;
@@ -219,7 +219,7 @@
   }
 }
 
-@keyframes tipSlideOutLeft {
+@keyframes popoverSlideOutLeft {
   0% {
     transform: translate(0, 0);
     opacity: 1;
@@ -233,29 +233,29 @@
 .@{__popoverPrefixCls}-placement-right,
 .@{__popoverPrefixCls}-placement-rightTop,
 .@{__popoverPrefixCls}-placement-rightBottom {
-  &.tip-slide-enter,
-  &.tip-slide-appear {
+  &.popover-slide-enter,
+  &.popover-slide-appear {
     opacity: 0;
     transform: translate(-10px, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-enter-active,
-  &.tip-slide-appear-active {
-    animation-name: tipSlideInLeft;
+  &.popover-slide-enter-active,
+  &.popover-slide-appear-active {
+    animation-name: popoverSlideInLeft;
   }
-  &.tip-slide-leave {
+  &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-leave-active {
-    animation-name: tipSlideOutLeft;
+  &.popover-slide-leave-active {
+    animation-name: popoverSlideOutLeft;
   }
 }
 
-@keyframes tipSlideInRight {
+@keyframes popoverSlideInRight {
   0% {
     transform: translate(10px, 0);
     opacity: 0;
@@ -266,7 +266,7 @@
   }
 }
 
-@keyframes tipSlideOutRight {
+@keyframes popoverSlideOutRight {
   0% {
     transform: translate(0, 0);
     opacity: 1;
@@ -280,29 +280,29 @@
 .@{__popoverPrefixCls}-placement-left,
 .@{__popoverPrefixCls}-placement-leftTop,
 .@{__popoverPrefixCls}-placement-leftBottom {
-  &.tip-slide-enter,
-  &.tip-slide-appear {
+  &.popover-slide-enter,
+  &.popover-slide-appear {
     opacity: 0;
     transform: translate(10px, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-enter-active,
-  &.tip-slide-appear-active {
-    animation-name: tipSlideInRight;
+  &.popover-slide-enter-active,
+  &.popover-slide-appear-active {
+    animation-name: popoverSlideInRight;
   }
-  &.tip-slide-leave {
+  &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-leave-active {
-    animation-name: tipSlideOutRight;
+  &.popover-slide-leave-active {
+    animation-name: popoverSlideOutRight;
   }
 }
 
-@keyframes tipSlideInBottom {
+@keyframes popoverSlideInBottom {
   0% {
     transform: translate(0, 10px);
     opacity: 0;
@@ -313,7 +313,7 @@
   }
 }
 
-@keyframes tipSlideOutBottom {
+@keyframes popoverSlideOutBottom {
   0% {
     transform: translate(0, 0);
     opacity: 1;
@@ -327,29 +327,29 @@
 .@{__popoverPrefixCls}-placement-top,
 .@{__popoverPrefixCls}-placement-topLeft,
 .@{__popoverPrefixCls}-placement-topRight {
-  &.tip-slide-enter,
-  &.tip-slide-appear {
+  &.popover-slide-enter,
+  &.popover-slide-appear {
     opacity: 0;
     transform: translate(0, 10px);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-enter-active,
-  &.tip-slide-appear-active {
-    animation-name: tipSlideInBottom;
+  &.popover-slide-enter-active,
+  &.popover-slide-appear-active {
+    animation-name: popoverSlideInBottom;
   }
-  &.tip-slide-leave {
+  &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-leave-active {
-    animation-name: tipSlideOutBottom;
+  &.popover-slide-leave-active {
+    animation-name: popoverSlideOutBottom;
   }
 }
 
-@keyframes tipSlideInTop {
+@keyframes popoverSlideInTop {
   0% {
     transform: translate(0, -10px);
     opacity: 0;
@@ -360,7 +360,7 @@
   }
 }
 
-@keyframes tipSlideOutTop {
+@keyframes popoverSlideOutTop {
   0% {
     transform: translate(0, 0);
     opacity: 1;
@@ -374,24 +374,24 @@
 .@{__popoverPrefixCls}-placement-bottom,
 .@{__popoverPrefixCls}-placement-bottomLeft,
 .@{__popoverPrefixCls}-placement-bottomRight {
-  &.tip-slide-enter,
-  &.tip-slide-appear {
+  &.popover-slide-enter,
+  &.popover-slide-appear {
     opacity: 0;
     transform: translate(0, -10px);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-enter-active,
-  &.tip-slide-appear-active {
-    animation-name: tipSlideInTop;
+  &.popover-slide-enter-active,
+  &.popover-slide-appear-active {
+    animation-name: popoverSlideInTop;
   }
-  &.tip-slide-leave {
+  &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
     animation-timing-function: ease-out;
     animation-duration: .3s; 
   }
-  &.tip-slide-leave-active {
-    animation-name: tipSlideOutTop;
+  &.popover-slide-leave-active {
+    animation-name: popoverSlideOutTop;
   }
 }

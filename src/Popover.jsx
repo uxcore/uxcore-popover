@@ -126,7 +126,7 @@ class Popover extends React.Component {
 
 Popover.defaultProps = {
   prefixCls: 'kuma-popover',
-  transitionName: 'tip-slide',
+  transitionName: 'popover-slide',
   delay: 0,
   placement: 'top',
   trigger: 'hover',
