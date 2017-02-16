@@ -1,5 +1,10 @@
 # HISTORY
 
+## 0.4.3
+
+* `CHANGED` animation direction change
+* `CHANGED` use global transition ease
+
 ## 0.4.0
 
 * `CHANGED` new animation

@@ -210,7 +210,7 @@
 
 @keyframes popoverSlideInLeft {
   0% {
-    transform: translate(-10px, 0);
+    transform: translate(10px, 0);
     opacity: 0;
   }
   100% {
@@ -225,7 +225,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(-10px, 0);
+    transform: translate(10px, 0);
     opacity: 0;
   }
 }
@@ -236,9 +236,9 @@
   &.popover-slide-enter,
   &.popover-slide-appear {
     opacity: 0;
-    transform: translate(-10px, 0);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    transform: translate(10px, 0);
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-enter-active,
   &.popover-slide-appear-active {
@@ -247,8 +247,8 @@
   &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-leave-active {
     animation-name: popoverSlideOutLeft;
@@ -257,7 +257,7 @@
 
 @keyframes popoverSlideInRight {
   0% {
-    transform: translate(10px, 0);
+    transform: translate(-10px, 0);
     opacity: 0;
   }
   100% {
@@ -272,7 +272,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(10px, 0);
+    transform: translate(-10px, 0);
     opacity: 0;
   }
 }
@@ -283,9 +283,9 @@
   &.popover-slide-enter,
   &.popover-slide-appear {
     opacity: 0;
-    transform: translate(10px, 0);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    transform: translate(-10px, 0);
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-enter-active,
   &.popover-slide-appear-active {
@@ -294,8 +294,8 @@
   &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-leave-active {
     animation-name: popoverSlideOutRight;
@@ -304,7 +304,7 @@
 
 @keyframes popoverSlideInBottom {
   0% {
-    transform: translate(0, 10px);
+    transform: translate(0, -10px);
     opacity: 0;
   }
   100% {
@@ -319,7 +319,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(0, 10px);
+    transform: translate(0, -10px);
     opacity: 0;
   }
 }
@@ -330,9 +330,9 @@
   &.popover-slide-enter,
   &.popover-slide-appear {
     opacity: 0;
-    transform: translate(0, 10px);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    transform: translate(0, -10px);
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-enter-active,
   &.popover-slide-appear-active {
@@ -341,8 +341,8 @@
   &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-leave-active {
     animation-name: popoverSlideOutBottom;
@@ -351,7 +351,7 @@
 
 @keyframes popoverSlideInTop {
   0% {
-    transform: translate(0, -10px);
+    transform: translate(0, 10px);
     opacity: 0;
   }
   100% {
@@ -366,7 +366,7 @@
     opacity: 1;
   }
   100% {
-    transform: translate(0, -10px);
+    transform: translate(0, 10px);
     opacity: 0;
   }
 }
@@ -377,9 +377,9 @@
   &.popover-slide-enter,
   &.popover-slide-appear {
     opacity: 0;
-    transform: translate(0, -10px);
-    animation-timing-function: ease-out;
-    animation-duration: .15s; 
+    transform: translate(0, 10px);
+    animation-timing-function: @transition-ease;
+    animation-duration: .3s; 
   }
   &.popover-slide-enter-active,
   &.popover-slide-appear-active {
@@ -388,7 +388,7 @@
   &.popover-slide-leave {
     opacity: 1;
     transform: translate(0, 0);
-    animation-timing-function: ease-out;
+    animation-timing-function: @transition-ease;
     animation-duration: .3s; 
   }
   &.popover-slide-leave-active {
