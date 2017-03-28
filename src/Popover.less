@@ -8,7 +8,7 @@
 @__popoverPrefixCls: kuma-popover;
 
 //** Popover arrow width
-@__popover-arrow-width:                 4px;
+@__popover-arrow-width:                 7px;
 //** Popover distance with trigger
 @__popover-distance:                    @__popover-arrow-width + 4;
 //** Popover outer arrow width
@@ -28,11 +28,12 @@
     text-align: left;
 
     &-button-group {
-        padding: 10px 0;
-        background-color: @basic-300;
-        text-align: center;
+        padding: 6px 0 0;
+        text-align: right;
+        background: #fff;
         .kuma-button {
-            margin-right: 10px;
+            margin-left: 10px;
+            margin-right: 0;
         }
     }
 
@@ -70,26 +71,37 @@
   }
 
   &-inner {
-    min-width: 180px;
+    min-width: 320px;
+    max-width: 560px;
     background-color: #fff;
     border: 1px solid @border-color;
     border-radius: 3px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+    box-shadow: @box-shadow-1;
+    padding: 16px 16px 16px 24px;
     .@{__popoverPrefixCls}-content {
+        color: @dark-alpha-4;
         > div {
             &:first-child {
-                padding: 20px;
+                padding: 0;
             }
         }
     }
   }
 
     &-title {
-        padding: 0 20px;
+        padding: 0;
         line-height: 32px;
         height: 32px;
-        border-bottom: 1px solid @border-color;
-        color: @text-secondary-color;
+        font-size: 16px;
+        border: none;
+        color: @dark-alpha-2;
+        & + .@{__popoverPrefixCls}-content {
+            > div {
+                &:first-child {
+                    padding: 5px 0;
+                }
+            }
+        }
     }
 
   // Arrows

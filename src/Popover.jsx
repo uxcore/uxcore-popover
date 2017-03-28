@@ -92,11 +92,11 @@ class Popover extends React.Component {
     if (me.props.showButton) {
       return (<div className={`${me.props.prefixCls}-button-group`}>
         <Button
-          size="small" type="primary" onClick={me.handleOkClick.bind(me)}
-        >{me.props.okText}</Button>
-        <Button
           size="small" type="secondary" onClick={me.handleCancelClick.bind(me)}
         >{me.props.cancelText}</Button>
+        <Button
+          size="small" type="primary" onClick={me.handleOkClick.bind(me)}
+        >{me.props.okText}</Button>
       </div>);
     }
     return null;
