@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.5.0
+
+* `CHANGED` new style
+
 ## 0.4.3
 
 * `CHANGED` animation direction change
