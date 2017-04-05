@@ -48,8 +48,7 @@ class Demo extends React.Component {
     const me = this;
     const overlay = (<div>
       <div className="demoContent">
-        <i className="kuma-icon kuma-icon-information" />
-        <span>你确认要删除此项数据吗？</span>
+        <span>目标删除后将不可恢复，如有子目标将会删除！</span>
       </div>
     </div>);
     return (
@@ -103,7 +102,7 @@ class Demo extends React.Component {
         </div>
         <h2>Demo 2. 点击弹出 & 内置按钮</h2>
         <Popover
-          title="测试"
+          title="您确定要删除该目标吗？"
           overlay={overlay}
           placement="right"
           trigger="click"
