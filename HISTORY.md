@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.5.1
+
+* `CHANGED` add new prop `getTooltipContainer`
+
 ## 0.5.0
 
 * `CHANGED` new style

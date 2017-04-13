@@ -116,5 +116,6 @@ http://uxcore.github.io/uxcore/components/uxcore-popover/
 |okText|string|optional|"确定"|内置的确定按钮显示的文案|
 |cancelText|string|optional|"取消"|内置的取消按钮显示的文案|
 |onVisibleChange|function(isDisplay)|optional|noop|显示状态发生改变的回调，isDisplay表示弹窗是否展开|
+|getTooltipContainer|function|optional| - | 返回一个 dom 节点，作为 tooltip 渲染的容器 |
 
 

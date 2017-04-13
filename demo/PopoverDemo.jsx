@@ -128,6 +128,19 @@ class Demo extends React.Component {
         >
           <Button onMouseOver={me.onChange.bind(me, true)}>手动控制</Button>
         </Popover>
+        <h2>Demo 6. 自定义渲染容器</h2>
+        <Popover
+          overlay={overlay}
+          placement="right"
+          getTooltipContainer={() => {
+            const div = document.createElement('div');
+            div.className = 'custom';
+            document.body.appendChild(div);
+            return div;
+          }}
+        >
+          <Button>从右弹出</Button>
+        </Popover>
       </div>
         );
   }

@@ -117,6 +117,7 @@ class Popover extends React.Component {
         transitionName={me.props.transitionName}
         trigger={me.props.trigger}
         overlay={me.generateOverlay()}
+        getTooltipContainer={me.props.getTooltipContainer}
       >
         {me.props.children}
       </Tooltip>
