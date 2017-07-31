@@ -1,5 +1,9 @@
 # HISTORY
 
+## 0.5.2
+
+* `CHANGED` support new prop `align`
+
 ## 0.5.1
 
 * `CHANGED` add new prop `getTooltipContainer`

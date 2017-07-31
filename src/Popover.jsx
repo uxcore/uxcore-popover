@@ -111,6 +111,7 @@ class Popover extends React.Component {
         arrowContent={me.props.arrowContent}
         overlayClassName={me.props.overlayClassName}
         prefixCls={me.props.prefixCls}
+        align={me.props.align}
         visible={me.state.visible}
         onVisibleChange={me.handleVisibleChange.bind(me)}
         mouseEnterDelay={me.props.delay}
