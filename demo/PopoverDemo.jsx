@@ -12,7 +12,7 @@ const React = require('react');
 const Popover = require('../src');
 
 const test = () => {
-  alert('test');
+  alert('test'); // eslint-disable-line no-alert
 };
 
 const onOk = (cb) => {
@@ -41,7 +41,6 @@ class Demo extends React.Component {
         visible,
       });
     }
-    console.log(visible);
   }
 
   render() {
@@ -54,19 +53,19 @@ class Demo extends React.Component {
     return (
       <div>
         <h2>Demo 1. 悬浮弹出</h2>
-        <div style={{ marginLeft: 300, marginTop: 100 }}>
-          <div style={{ marginLeft: 60 }}>
+        <div style={{ marginLeft: '300px', marginTop: '100px' }}>
+          <div style={{ marginLeft: '60px' }}>
             <Popover placement="topLeft" title={'上左'} overlay={overlay} onOk={test}>
               <Button>上左</Button>
             </Popover>
             <Popover placement="top" title={'上边'} overlay={overlay}>
-              <Button>上边</Button>
+              <Button style="margin-left:10px;">上边</Button>
             </Popover>
             <Popover placement="topRight" title={'上右'} overlay={overlay}>
-              <Button>上右</Button>
+              <Button style="margin-left:10px;">上右</Button>
             </Popover>
           </div>
-          <div style={{ width: 60, float: 'left' }}>
+          <div style={{ width: '60px', float: 'left' }}>
             <Popover placement="leftTop" title={'左上'} overlay={overlay}>
               <Button>左上</Button>
             </Popover>
@@ -77,7 +76,7 @@ class Demo extends React.Component {
               <Button>左下</Button>
             </Popover>
           </div>
-          <div style={{ width: 60, marginLeft: 270 }}>
+          <div style={{ width: '60px', marginLeft: '270px' }}>
             <Popover placement="rightTop" title={'右上'} overlay={overlay}>
               <Button>右上</Button>
             </Popover>
@@ -88,7 +87,7 @@ class Demo extends React.Component {
               <Button>右下</Button>
             </Popover>
           </div>
-          <div style={{ marginLeft: 60, clear: 'both' }}>
+          <div style={{ marginLeft: '60px', clear: 'both' }}>
             <Popover placement="bottomLeft" title={'下左'} overlay={overlay}>
               <Button>下左</Button>
             </Popover>
