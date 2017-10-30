@@ -2,4 +2,5 @@
  * only require other specs here
  */
 
-import spec from './Popover.spec';
+ const req = require.context('.', false, /\.spec\.js$/);
+ req.keys().forEach(req);
