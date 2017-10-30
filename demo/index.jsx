@@ -6,9 +6,9 @@
  * All rights reserved.
  */
 
- const React = require('react');
- const ReactDOM = require('react-dom');
+ import React from 'react';
+ import ReactDOM from 'react-dom';
 
- const Demo = require('./PopoverDemo');
+ import Demo from './PopoverDemo';
 
  ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));

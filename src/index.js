@@ -6,4 +6,6 @@
  * All rights reserved.
  */
 
-module.exports = require('./Popover');
+import Popover from './Popover';
+
+export default Popover;

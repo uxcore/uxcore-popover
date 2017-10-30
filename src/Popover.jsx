@@ -6,9 +6,10 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const Tooltip = require('rc-tooltip');
-const Button = require('uxcore-button');
+import React from 'react';
+import Tooltip from 'rc-tooltip';
+import Button from 'uxcore-button';
+import PropTypes from 'prop-types';
 
 class Popover extends React.Component {
 
@@ -143,21 +144,23 @@ Popover.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Popover.propTypes = {
-  prefixCls: React.PropTypes.string,
-  delay: React.PropTypes.number,
-  overlayClassName: React.PropTypes.string,
-  placement: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'topLeft', 'bottomLeft', 'leftTop', 'rightTop', 'topRight', 'bottomRight', 'leftBottom', 'rightBottom']),
-  trigger: React.PropTypes.oneOf(['hover', 'click']),
-  onOk: React.PropTypes.func,
-  onCancel: React.PropTypes.func,
-  okText: React.PropTypes.string,
-  cancelText: React.PropTypes.string,
-  visible: React.PropTypes.bool,
-  showButton: React.PropTypes.bool,
-  onVisibleChange: React.PropTypes.func,
+  prefixCls: PropTypes.string,
+  delay: PropTypes.number,
+  overlayClassName: PropTypes.string,
+  placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right',
+    'topLeft', 'bottomLeft', 'leftTop', 'rightTop', 'topRight', 'bottomRight',
+    'leftBottom', 'rightBottom']),
+  trigger: PropTypes.oneOf(['hover', 'click']),
+  onOk: PropTypes.func,
+  onCancel: PropTypes.func,
+  okText: PropTypes.string,
+  cancelText: PropTypes.string,
+  visible: PropTypes.bool,
+  showButton: PropTypes.bool,
+  onVisibleChange: PropTypes.func,
 };
 
 
 Popover.displayName = 'Popover';
 
-module.exports = Popover;
+export default Popover;
