@@ -1,5 +1,11 @@
 # HISTORY
 
+## 0.5.3
+
+* `CHANGED` react to 15.x
+* `FIXED` JSHint issues
+* `NEW` tests
+
 ## 0.5.2
 
 * `CHANGED` support new prop `align`
