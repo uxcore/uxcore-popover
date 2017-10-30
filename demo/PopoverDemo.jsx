@@ -6,10 +6,10 @@
  * All rights reserved.
  */
 
-const Button = require('uxcore-button');
-const React = require('react');
+import Button from 'uxcore-button';
+import React from 'react';
 
-const Popover = require('../src');
+import Popover from '../src';
 
 const test = () => {
   alert('test'); // eslint-disable-line no-alert
@@ -19,7 +19,7 @@ const onOk = (cb) => {
   cb();
 };
 
-class Demo extends React.Component {
+export default class Demo extends React.Component {
 
   constructor(props) {
     super(props);
@@ -144,5 +144,3 @@ class Demo extends React.Component {
         );
   }
 }
-
-module.exports = Demo;
