@@ -131,7 +131,6 @@
   &-placement-topLeft &-arrow,
   &-placement-topRight &-arrow {
     left: 50%;
-    margin-left: -@__popover-arrow-outer-width;
     border-bottom-width: 0;
     border-top-color: @border-color;
     bottom: @__popover-distance - @__popover-arrow-outer-width + 1;
@@ -144,10 +143,14 @@
     }
   }
   &-placement-topLeft &-arrow {
-    left: 15%;
+    left: 10px;
   }
   &-placement-topRight &-arrow {
-    left: 85%;
+    right: 10px;
+    left: auto;
+  }
+  &-placement-top &-arrow {
+    margin-left: -@__popover-arrow-outer-width;
   }
 
   &-placement-right &-arrow,
@@ -155,7 +158,6 @@
   &-placement-rightBottom &-arrow {
     top: 50%;
     left: @__popover-distance - @__popover-arrow-outer-width + 1;
-    margin-top: -@__popover-arrow-outer-width;
     border-left-width: 0;
     border-right-color: @border-color;
     &:after {
@@ -167,17 +169,20 @@
     }
   }
   &-placement-rightTop &-arrow {
-    top: 15%;
+    top: 10px;
   }
   &-placement-rightBottom &-arrow {
-    top: 85%;
+    top: auto;
+    bottom: 10px;
+  }
+  &-placement-right &-arrow {
+    margin-top: -@__popover-arrow-outer-width;
   }
 
   &-placement-bottom &-arrow,
   &-placement-bottomLeft &-arrow,
   &-placement-bottomRight &-arrow {
     left: 50%;
-    margin-left: -@__popover-arrow-outer-width;
     border-top-width: 0;
     border-bottom-color: @border-color;
     top: @__popover-distance - @__popover-arrow-outer-width + 1;
@@ -190,10 +195,14 @@
     }
   }
   &-placement-bottomLeft &-arrow {
-    left: 15%;
+    left: 10px;
   }
   &-placement-bottomRight &-arrow {
-    left: 85%;
+    right: 10px;
+    left: auto;
+  }
+  &-placement-bottom &-arrow {
+    margin-left: -@__popover-arrow-outer-width;
   }
 
   &-placement-left &-arrow,
@@ -201,7 +210,6 @@
   &-placement-leftBottom &-arrow {
     top: 50%;
     right: @__popover-distance - @__popover-arrow-outer-width + 1;
-    margin-top: -@__popover-arrow-outer-width;
     border-right-width: 0;
     border-left-color: @border-color;
     &:after {
@@ -213,10 +221,14 @@
     }
   }
   &-placement-leftTop &-arrow {
-    top: 15%;
+    top: 10px;
   }
   &-placement-leftBottom &-arrow {
-    top: 85%;
+    bottom: 10px;
+    top: auto;
+  }
+  &-placement-left &-arrow {
+    margin-top: -@__popover-arrow-outer-width;
   }
 }
 

@@ -1,5 +1,10 @@
 # HISTORY
 
+## 0.5.4
+
+* `CHANGED` arrow position imporvement
+* `CHANGED` update `rc-tooltip` to `^3.0.0`
+
 ## 0.5.3
 
 * `CHANGED` react to 15.x
