@@ -1,5 +1,11 @@
 # HISTORY
 
+
+## 0.5.5
+
+* `CHANGED` update `uxcore-button` to `^0.4.0`
+
+
 ## 0.5.4
 
 * `CHANGED` arrow position imporvement

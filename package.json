@@ -1,6 +1,6 @@
 {
  "name": "uxcore-popover",
- "version": "0.5.4",
+ "version": "0.5.5",
  "description": "uxcore-popover component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-popover.git",
  "author": "eternalsky",
@@ -49,7 +49,7 @@
   "object-assign": "^4.0.0",
   "prop-types": "15.x",
   "rc-tooltip": "^3.3.0",
-  "uxcore-button": "~0.3.0"
+  "uxcore-button": "^0.4.0"
  },
  "contributors": [],
  "license": "MIT"

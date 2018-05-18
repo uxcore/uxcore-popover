@@ -20,7 +20,6 @@ const onOk = (cb) => {
 };
 
 export default class Demo extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -59,10 +58,10 @@ export default class Demo extends React.Component {
               <Button>上左</Button>
             </Popover>
             <Popover placement="top" title={'上边'} overlay={overlay}>
-              <Button style="margin-left:10px;">上边</Button>
+              <Button style={{ marginLeft: '10px' }}>上边</Button>
             </Popover>
             <Popover placement="topRight" title={'上右'} overlay={overlay}>
-              <Button style="margin-left:10px;">上右</Button>
+              <Button style={{ marginLeft: '10px' }}>上右</Button>
             </Popover>
           </div>
           <div style={{ width: '60px', float: 'left' }}>
@@ -141,6 +140,6 @@ export default class Demo extends React.Component {
           <Button>从右弹出</Button>
         </Popover>
       </div>
-        );
+    );
   }
 }
