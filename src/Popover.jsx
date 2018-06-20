@@ -21,14 +21,13 @@ class Popover extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const me = this;
-
-    if (('visible' in nextProps) && (nextProps.visible !== me.props.visible)) {
-      me.setState({
-        visible: nextProps.visible,
-      });
+  static getDerivedStateFromProps(props, states) {
+    if (('visible' in props) && props.visible !== states.visible) {
+      return {
+        visible: props.visible
+      }
     }
+    return null
   }
 
   handleOkClick() {
@@ -57,6 +56,7 @@ class Popover extends React.Component {
   }
 
   handleVisibleChange(visible) {
+    console.log(111)
     const me = this;
     if (!('visible' in me.props)) {
       me.setState({
