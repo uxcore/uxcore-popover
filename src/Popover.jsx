@@ -23,9 +23,10 @@ class Popover extends React.Component {
   }
 
   static getDerivedStateFromProps(props, states = {}) {
-    if (('visible' in props) && props.visible !== states.visible) {
+    if (('visible' in props) && props.visible !== states._visible) {
       return {
-        visible: props.visible
+        visible: props.visible,
+        _visible: props.visible
       }
     }
     return null;

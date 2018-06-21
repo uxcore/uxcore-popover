@@ -48,7 +48,6 @@ describe('Popover', () => {
       </Popover>
     );
     expect(component.state.visible).equal(false);
-    // console.log(component.constructor.getDerivedStateFromProps({...props, visible: true}))
     component.setState({ ...component.state, visible: true }, () => {
       setTimeout(() => {
         expect(component.state.visible).equal(true);
