@@ -10,6 +10,7 @@ import React from 'react';
 import Tooltip from 'rc-tooltip';
 import Button from 'uxcore-button';
 import PropTypes from 'prop-types';
+import { polyfill } from 'react-lifecycles-compat';
 
 class Popover extends React.Component {
 
@@ -161,5 +162,7 @@ Popover.propTypes = {
 
 
 Popover.displayName = 'Popover';
+
+polyfill(Popover)
 
 export default Popover;
