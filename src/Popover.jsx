@@ -22,13 +22,13 @@ class Popover extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(props, states) {
+  static getDerivedStateFromProps(props, states = {}) {
     if (('visible' in props) && props.visible !== states.visible) {
       return {
         visible: props.visible
       }
     }
-    return null
+    return null;
   }
 
   handleOkClick() {

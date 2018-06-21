@@ -2,6 +2,8 @@ import expect from 'expect.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils, { Simulate } from 'react-dom/test-utils';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Popover from '../src';
 
 describe('Popover', () => {
@@ -46,16 +48,19 @@ describe('Popover', () => {
       </Popover>
     );
     expect(component.state.visible).equal(false);
+    // console.log(component.constructor.getDerivedStateFromProps({...props, visible: true}))
     component.setState({ ...component.state, visible: true }, () => {
-      expect(component.state.visible).equal(true);
+      setTimeout(() => {
+        expect(component.state.visible).equal(true);
+      }, 0)
       component.handleOkClick();
       component.handleCancelClick();
       setTimeout(() => {
         expect(onVisibleChangeCalled).equal(true);
         expect(onCancleCalled).equal(true);
         expect(onOkCalled).equal(true);
-      }, 200);
-      component.componentWillReceiveProps({...props, visible: true});
+      }, 0);
+      component.constructor.getDerivedStateFromProps({...props, visible: true}, {})
     });
   });
 
@@ -68,19 +73,26 @@ describe('Popover', () => {
         <span>目标删除后将不可恢复，如有子目标将会删除！</span>
       </div>
     </div>);
+    const props = {
+      placement: "right",
+      title: '右边',
+      overlay: overlay,
+      onCancle:  () => { onCancleCalled = true },
+      onVisibleChange: () => { onVisibleChangeCalled = true },
+      onOk: (cb) => {
+        cb();
+        onOkCalled = true;
+      }
+    }
     const component = TestUtils.renderIntoDocument(
-      <Popover placement="right" title={'右边'} overlay={overlay}
-        onCancle = {() => {onCancleCalled = true}}
-        onVisibleChange = {() => {onVisibleChangeCalled = true}}
-        onOk = {(cb) => {
-          cb();
-          onOkCalled = true;
-        }}>
+      <Popover
+        {...props}
+      >
         <span>右边</span>
       </Popover>
     );
     expect(component.state.visible).equal(false);
-    component.componentWillReceiveProps({visible: true});
+    component.constructor.getDerivedStateFromProps({...props, visible: true}, {});
     component.handleOkClick();
     component.handleCancelClick();
     component.handleVisibleChange();
