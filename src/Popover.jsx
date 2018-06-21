@@ -56,7 +56,6 @@ class Popover extends React.Component {
   }
 
   handleVisibleChange(visible) {
-    console.log(111)
     const me = this;
     if (!('visible' in me.props)) {
       me.setState({
