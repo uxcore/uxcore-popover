@@ -1,6 +1,6 @@
 {
  "name": "uxcore-popover",
- "version": "0.5.5",
+ "version": "0.6.0",
  "description": "uxcore-popover component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-popover.git",
  "author": "eternalsky",
@@ -34,21 +34,22 @@
  "devDependencies": {
   "console-polyfill": "^0.2.2",
   "enzyme": "^3.0.0",
-  "enzyme-adapter-react-15": "^1.0.0",
-  "es5-shim": "^4.5.8",
+  "enzyme-adapter-react-16": "1.x",
   "expect.js": "~0.3.1",
   "kuma-base": "1.x",
-  "react": "15.x",
-  "react-dom": "15.x",
-  "react-test-renderer": "15.x",
+  "react": "16.x",
+  "react-dom": "16.x",
+  "react-test-renderer": "16.x",
   "uxcore-kuma": "*",
-  "uxcore-tools": "0.2.x"
+  "uxcore-tools": "^0.3.0",
+  "babel-polyfill": "6.x"
  },
  "dependencies": {
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
   "prop-types": "15.x",
   "rc-tooltip": "^3.3.0",
+  "react-lifecycles-compat": "^3.0.4",
   "uxcore-button": "^0.4.0"
  },
  "contributors": [],

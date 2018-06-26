@@ -10,6 +10,7 @@ import React from 'react';
 import Tooltip from 'rc-tooltip';
 import Button from 'uxcore-button';
 import PropTypes from 'prop-types';
+import { polyfill } from 'react-lifecycles-compat';
 
 class Popover extends React.Component {
 
@@ -21,14 +22,14 @@ class Popover extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const me = this;
-
-    if (('visible' in nextProps) && (nextProps.visible !== me.props.visible)) {
-      me.setState({
-        visible: nextProps.visible,
-      });
+  static getDerivedStateFromProps(props, states = {}) {
+    if (('visible' in props) && props.visible !== states._visible) {
+      return {
+        visible: props.visible,
+        _visible: props.visible
+      }
     }
+    return null;
   }
 
   handleOkClick() {
@@ -162,5 +163,7 @@ Popover.propTypes = {
 
 
 Popover.displayName = 'Popover';
+
+polyfill(Popover)
 
 export default Popover;
