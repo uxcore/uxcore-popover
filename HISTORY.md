@@ -1,5 +1,8 @@
 # HISTORY
 
+## 0.6.3
+
+* `FIXED` button prefixCls
 
 ## 0.5.5
 
